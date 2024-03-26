@@ -31,7 +31,7 @@ public class Signup extends JFrame implements ActionListener {
         add(l11);
 
         l1 = new JLabel("FORMULÁRIO DE APLICAÇÃO NO. "+first);
-        l1.setFont(new Font("Raleway", Font.BOLD, 38));
+        l1.setFont(new Font("Raleway", Font.BOLD, 32));
 
         l2 = new JLabel("Page 1: Detalhes pessoais");
         l2.setFont(new Font("Raleway", Font.BOLD, 22));
@@ -259,10 +259,11 @@ public class Signup extends JFrame implements ActionListener {
             if(t6.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Fill all the required fields");
             } else {
-                Conn c1 = new Conn();
+                Conn c = new Conn();
                 String q1 = "insert into signup values('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+city+"','"+pincode+"','"+state+"')";
-                c1.s.executeUpdate(q1);
+                c.s.executeUpdate(q1);
 
+                new SignupTwo(formno).setVisible(true);
                 setVisible(false);
             }
         }catch (Exception e){

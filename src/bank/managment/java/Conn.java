@@ -1,4 +1,6 @@
 package bank.managment.java;
+import com.mysql.cj.jdbc.Driver;
+
 import java.sql.*;
 public class Conn {
     Connection c;
@@ -6,7 +8,7 @@ public class Conn {
     public Conn(){
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            c =DriverManager.getConnection("jdbc:mysql:///bankmanagement","root","password");
+            c =DriverManager.getConnection("jdbc:mysql:///bankmanegement","root","password");
             s =c.createStatement();
 
 
