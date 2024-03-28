@@ -26,7 +26,7 @@ public class SignupTwo extends JFrame implements ActionListener{
 
 
         this.formno = formno;
-        setTitle("NEW ACCOUNT APPLICATION FORM - PAGE 2");
+        setTitle("FORMULÁRIO DE APLICAÇÃO - PAGE 2");
 
         l1 = new JLabel("Page 2: Detalhes adicionais");
         l1.setFont(new Font("Raleway", Font.BOLD, 22));
@@ -229,6 +229,7 @@ public class SignupTwo extends JFrame implements ActionListener{
                 String q1 = "insert into signup2 values('"+formno+"','"+religion+"','"+category+"','"+income+"','"+education+"','"+occupation+"','"+pan+"','"+aadhar+"','"+scitizen+"','"+eaccount+"')";
                 c1.s.executeUpdate(q1);
 
+                new Signup3(formno).setVisible(true);
                 setVisible(false);
             }
 
